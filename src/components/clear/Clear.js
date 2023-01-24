@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function Clear({ lapTime, clearAll }) {
   const clear =
     lapTime.length > 0 ? (
@@ -6,9 +8,14 @@ function Clear({ lapTime, clearAll }) {
       </div>
     ) : (
       ''
-    )
+    );
 
-  return clear
+  return clear;
 }
 
-export default Clear
+Clear.propTypes = {
+  lapTime: PropTypes.array,
+  onClearArr: PropTypes.func,
+};
+
+export default Clear;
